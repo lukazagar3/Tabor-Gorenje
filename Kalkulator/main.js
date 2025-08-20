@@ -1,34 +1,13 @@
 function izracunaj() {
   var racun = document.getElementById("racunInput").value;
+  
+  racun = racun.replace("x", "*");
+  racun = racun.replace("÷", "/");
+  racun = racun.replace("^","**");
 
   document.getElementById("zgodovina").innerHTML += "<br>"+racun.slice(-15);
   document.getElementById("racunInput").value = eval(racun);
 }
-
-// Ustvarimo gumbe za številke
-/*
-for (var i = 0; i < 10; i++) {
-  var gumb = document.createElement("input");
-  gumb.type = "button";
-  gumb.value = i;
-  gumb.onclick = function() {
-    document.getElementById("racunInput").value += this.value;
-  }
-  document.getElementById("gumbi").appendChild(gumb);
-}
-
-// Ustvarimo gumbe za operacije
-var operacije = ["+", "-", "*", "/", "**"];
-for (var i = 0; i < operacije.length; i++) {
-  var gumb = document.createElement("input");
-  gumb.type = "button";
-  gumb.value = operacije[i];
-  gumb.onclick = function() {
-    document.getElementById("racunInput").value += this.value;
-  }
-  document.getElementById("gumbi").appendChild(gumb);
-}
-*/
 
 var gumbi = document.getElementsByClassName("grid-gumb")
 for (var i = 0; i < gumbi.length; i++) {
@@ -58,7 +37,7 @@ document.getElementById('zapriZgodovino').onclick = function() {
   document.getElementById('ozadje').style.display = 'none'; // če uporabljaš zatemnitev
 };
 
-const so = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "/", "*", "**"];
+const so = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "÷", "x", "^"];
 function handleKeyDown(e) {
   // Tipka je bila pritisnena
   console.log("Tipka", e.key);
