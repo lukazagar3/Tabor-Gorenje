@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator naključnih števil</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        .container { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input[type="number"] { padding: 8px; width: 100px; }
+        button { padding: 10px 15px; cursor: pointer; }
+        .rezultat { margin-top: 20px; font-size: 1.2em; font-weight: bold; }
+        .napaka { color: red; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generator naključnih števil</h1>
+        
+        <form method="POST">
+            <label for="spodnja_meja">Spodnja meja:</label>
+            <input type="number" id="spodnja_meja" name="spodnja_meja" required>
+            
+            <label for="zgornja_meja">Zgornja meja:</label>
+            <input type="number" id="zgornja_meja" name="zgornja_meja" required>
+            
+            <button type="submit">Generiraj</button>
+        </form>
+        
+        {% if nakljucno_stevilo %}
+            <div class="rezultat">
+                Naključno število je: {{ nakljucno_stevilo }}
+            </div>
+        {% endif %}
+        
+        {% if napaka %}
+            <div class="napaka">
+                {{ napaka }}
+            </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>
