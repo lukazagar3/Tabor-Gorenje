@@ -1,12 +1,13 @@
 function izracunaj() {
   var racun = document.getElementById("racunInput").value;
   
+  document.getElementById("zgodovina").innerHTML += "<br>"+racun.slice(-15);
+  document.getElementById("racunInput").value = eval(racun);
+  
   racun = racun.replace("×", "*");
   racun = racun.replace("÷", "/");
   racun = racun.replace("^","**");
 
-  document.getElementById("zgodovina").innerHTML += "<br>"+racun.slice(-15);
-  document.getElementById("racunInput").value = eval(racun);
 }
 
 var gumbi = document.getElementsByClassName("grid-gumb")
