@@ -1,7 +1,7 @@
 function izracunaj() {
   var racun = document.getElementById("racunInput").value;
   
-  racun = racun.replace("x", "*");
+  racun = racun.replace("×", "*");
   racun = racun.replace("÷", "/");
   racun = racun.replace("^","**");
 
@@ -37,7 +37,7 @@ document.getElementById('zapriZgodovino').onclick = function() {
   document.getElementById('ozadje').style.display = 'none'; // če uporabljaš zatemnitev
 };
 
-const so = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "÷", "x", "^"];
+const so = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "÷", "×", "^"];
 function handleKeyDown(e) {
   // Tipka je bila pritisnena
   console.log("Tipka", e.key);
